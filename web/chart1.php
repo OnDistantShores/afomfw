@@ -78,8 +78,8 @@ chart.data = <?php echo json_encode($topWordPerYearData) ?>;
 
 var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 categoryAxis.dataFields.category = "yearCategory";
-categoryAxis.renderer.minGridDistance = 60;
-categoryAxis.renderer.grid.template.location = 0;
+/*categoryAxis.renderer.minGridDistance = 60;
+categoryAxis.renderer.grid.template.location = 0;*/
 categoryAxis.dataItems.template.text = "{year}";
 /*categoryAxis.renderer.labels.template.rotation = 270;
 categoryAxis.renderer.labels.template.horizontalCenter = "right";
@@ -144,7 +144,7 @@ rangeTemplate.label.cloneTooltip = false;
     <?php if ($range["name"] == "William McMahon" || $range["name"] == "John Gorton") { ?>
         range.label.fontSize = "10";
     <?php } ?>
-    
+
     //range.label.rotation = 270;
     //range.label.tooltipText = <?php echo "\"" . $range["name"] . " (" . $range["start"] . "-" . $range["end"] . ")" . "\""; ?>;;
 <?php } ?>
