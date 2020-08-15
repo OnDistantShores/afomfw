@@ -3,6 +3,8 @@
 require_once("dbSetup.php");
 require_once("wordsOfInterest.php");
 
+$recordsPerYear = 100;
+
 $data = array();
 $uninterestingWords = array();
 
@@ -93,7 +95,7 @@ for ($year = 1959; $year <= 2020; $year++) {
 
                     $allRecordsFound = true;
                     foreach ($recordsForThisYearByPrimeMinister as $primeMinisterId => $recordCount) {
-                        if ($recordCount < 10) {
+                        if ($recordCount < $recordsPerYear) {
                             $allRecordsFound = false;
                         }
                     }
