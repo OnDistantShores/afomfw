@@ -2,7 +2,6 @@
 
 $wordsOfInterest = array(
     array("economy","economic"),
-    "time",
     array("work","working"),
     array("tax","taxation"),
     "world",
