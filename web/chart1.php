@@ -140,6 +140,11 @@ rangeTemplate.label.cloneTooltip = false;
     //range.label.dy = 30;
     range.label.truncate = true;
     range.label.fontWeight = "bold";
+
+    <?php if ($range["name"] == "William McMahon" || $range["name"] == "John Gorton") { ?>
+        range.label.fontSize = "10";
+    <?php } ?>
+    
     //range.label.rotation = 270;
     //range.label.tooltipText = <?php echo "\"" . $range["name"] . " (" . $range["start"] . "-" . $range["end"] . ")" . "\""; ?>;;
 <?php } ?>
