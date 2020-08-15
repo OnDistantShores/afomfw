@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
 }
 
 // Early years are very low on data which is misleading
-for ($year = 1945; $year <= 2020; $year++) {
+for ($year = 1959; $year <= 2020; $year++) {
 
     $wordsByPrimeMinister = array();
 
@@ -83,7 +83,7 @@ for ($year = 1945; $year <= 2020; $year++) {
                     $wordRatio = number_format((float)(round($row["word_count"] / $wordsByPrimeMinister[$row["prime_minister_id"]], 10)), 10);
 
                     $dataForYear[] = array(
-                        "year" => $year,
+                        "year" => (string)$year,
                         "word" => $row["word"],
                         "word_count" => $row["word_count"],
                         "word_ratio" => $wordRatio,
