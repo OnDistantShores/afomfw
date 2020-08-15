@@ -6,6 +6,17 @@ require_once("wordsOfInterest.php");
 $data = array();
 $uninterestingWords = array();
 
+// Load the list of all PM names
+$primeMinisterNames = array();
+$result = $conn->query(
+    "SELECT id, name"
+    . " FROM prime_minister");
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $primeMinisterNames[$row["id"]] = $row["name"];
+    }
+}
+
 // Early years are very low on data which is misleading
 for ($year = 1945; $year <= 2020; $year++) {
 
@@ -52,7 +63,7 @@ for ($year = 1945; $year <= 2020; $year++) {
                         ) {
                             // Update the word count + ratio
                             $entry["word_count"] = $entry["word_count"] + $row["word_count"];
-                            $entry["word_ratio"] = round($entry["word_count"] / $wordsByPrimeMinister[$row["prime_minister_id"]], 10);
+                            $entry["word_ratio"] = number_format((float)(round($entry["word_count"] / $wordsByPrimeMinister[$row["prime_minister_id"]], 10)), 10);
 
                             // Replace the word (if necessary) with the first in the list (the "headline" of the group)
                             $entry["word"] = $collapsibleWords[0];
@@ -69,7 +80,7 @@ for ($year = 1945; $year <= 2020; $year++) {
                     // This is a new, unique word of interest
                     $recordsForThisYearByPrimeMinister[$row["prime_minister_id"]]++;
 
-                    $wordRatio = round($row["word_count"] / $wordsByPrimeMinister[$row["prime_minister_id"]], 10);
+                    $wordRatio = number_format((float)(round($row["word_count"] / $wordsByPrimeMinister[$row["prime_minister_id"]], 10)), 10);
 
                     $dataForYear[] = array(
                         "year" => $year,
@@ -77,6 +88,7 @@ for ($year = 1945; $year <= 2020; $year++) {
                         "word_count" => $row["word_count"],
                         "word_ratio" => $wordRatio,
                         "prime_minister_id" => $row["prime_minister_id"],
+                        "prime_minister_name" => $primeMinisterNames[$row["prime_minister_id"]],
                     );
 
                     $allRecordsFound = true;
@@ -99,9 +111,9 @@ for ($year = 1945; $year <= 2020; $year++) {
     }
 }
 
-echo "<pre>";
-print_r($data);
-echo "uninteresting words:";
-print_r($uninterestingWords);
-echo "JSON:";
+//echo "<pre>";
+//print_r($data);
+//echo "uninteresting words:";
+//print_r($uninterestingWords);
+//echo "JSON:";
 echo json_encode($data);
