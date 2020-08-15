@@ -6,7 +6,7 @@ $wordsOfInterest = array(
     array("tax","taxation"),
     "world",
     "support",
-    "heath",
+    "health",
     "community",
     "debate",
     "public",
