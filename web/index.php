@@ -202,6 +202,19 @@
 					series.columns.template.tooltipText = "Word: [bold]{word}[/]\n{primeMinister}, {year}";
 					series.columns.template.fillOpacity = .8;
 
+					var colorIndex = 0;
+					var colorMappings = new Array();
+					series.columns.template.adapter.add("fill", function(fill, target) {
+
+					    // If we've never seen this word before, use a new color
+					    if (colorMappings[target.dataItem.word] === undefined) {
+					        colorIndex = colorIndex + 2;
+					        colorMappings[target.dataItem.word] = colorIndex;
+					    }
+
+					    return chart.colors.getIndex(colorMappings[target.dataItem.word]);
+					});
+
 					var columnTemplate = series.columns.template;
 					columnTemplate.strokeWidth = 2;
 					columnTemplate.strokeOpacity = 1;
