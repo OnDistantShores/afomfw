@@ -37,7 +37,6 @@
 		<!-- Header -->
 			<header id="header" class="alt">
 				<div class="logo"><a href="index.html">Prime <span>Figures of Speech</span></a></div>
-				<a href="#menu">Menu</a>
 			</header>
 
 		<!-- Nav -->
@@ -79,7 +78,7 @@
 										<h3>The language of leadership</h3>
 										<p>Today more than ever we can see the power of political leadership to make or break a country through difficult times.</p>
 										<p>Australia's prime minister is elected to serve our country and speak for our people. Their words should reflect both the sentiment of the people and the cultural themes of their time, as well as set a bold vision for the Australia we all want to create.</p>
-										<p>This project performs a deep dive into tens of thousands of transcripts from prime ministers over the last 60 years. The resulting analysis gives a though-provoking snapshot through time of the issues that have impacted us as a nation, and a rich genesis of some of the critical issues we face today.</p>
+										<p>This project performs a deep dive into tens of thousands of transcripts from prime ministers over the last 60 years. The resulting analysis gives a thought-provoking snapshot through time of the issues that have impacted us as a nation, and a rich genesis of some of the critical issues we face today.</p>
 									</div>
 								</div>
 						</div>
@@ -723,6 +722,52 @@
 
 			</div>
 
+	<!-- Section -->
+		<section class="wrapper style2">
+			<div class="inner">
+				<div class="flex flex-2">
+					<div class="col col2">
+						<h3>FAIR principles</h3>
+						<p>For this project, the most important aspects of the data I leveraged was that it as <strong>Accessible</strong> and <strong>Interoperable</strong>.</p>
+						<p>I found the data to be highly <strong>Accessible</strong>, as it was simply stored in a GitHub repository. This made access a breeze, and far easier than it might be on some of the other official sources which require complex and slow ordering processes. It was very important that I could just download the source files directly in my browser, with no wait times.</p>
+						<p>The data was <strong>Interoperable</strong> in the sense that it was in a standard XML format, making manipulation easy. However the data format was not well documented, and the format that I could discern was not always reliably adhered to, which caused some headaches.</p>
+						<p>Initially I searched for some other complimentary data around the prime minister transcripts, but I found this hard to find. The <a href="https://pmtranscripts.pmc.gov.au/">PM Transcripts</a> site was far harder to use than the source I used. So data in this sense was not very <strong>Findable</strong>.</p>
+					</div>
+					<div class="col col1 first">
+						<div class="image round fit">
+							<img src="images/pms4.jpg" alt="" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+			<!-- Section -->
+				<section class="wrapper style1">
+					<div class="inner">
+						<!-- 2 Columns -->
+							<div class="flex flex-2">
+								<div class="col col1">
+									<div class="image round fit">
+										<img src="images/pms5.jpg" alt="" />
+									</div>
+								</div>
+								<div class="col col2">
+									<h3>Links & references</h3>
+									<p><ul>
+										<li><a href="https://hackerspace.govhack.org/team_management/teams/1303">GovHack 2020 project page</a></li>
+										<li><a href="https://github.com/OnDistantShores/prime-figures-of-speech">This project's GitHub page</a></li>
+										<li><a href="https://github.com/wragge/pm-transcripts">PM Transcripts Respository</a>, my key data source</li>
+										<li><a href="https://templated.co/urban">The open source webpage template used</a></li>
+										<li><a href="https://www.amcharts.com/">AM Charts</a>, the library used for these charts</li>
+										<li><a href="https://github.com/dwyl/english-words">English words repository</a>, to filter out valid words to analyse</li>
+										<li><a href="https://gist.github.com/keithmorris/4155220">A function used to strip out "everyday" words</a></li>
+									</ul></p>
+								</div>
+							</div>
+					</div>
+				</section>
+
 		<!-- Section -->
 			<section class="wrapper style2">
 				<div class="inner">
@@ -738,7 +783,7 @@
 						</div>
 						<div class="col col1 first">
 							<div class="image round fit">
-								<img src="images/pms4.jpg" alt="" />
+								<img src="images/pms6.jpg" alt="" />
 							</div>
 						</div>
 					</div>
